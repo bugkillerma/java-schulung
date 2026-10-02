@@ -1,5 +1,6 @@
 package de.schulung.tag5.loesung;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +12,10 @@ public class Rechner {
     private final List<String> verlauf = new ArrayList<>();
 
     public double addiere(double a, double b) {
-        double ergebnis = a + b;
+        BigDecimal decimalA = BigDecimal.valueOf(a);
+        BigDecimal decimalB = BigDecimal.valueOf(b);
+        BigDecimal sum = decimalA.add(decimalB);
+        double ergebnis = sum.doubleValue();
         verlauf.add(a + " + " + b + " = " + ergebnis);
         return ergebnis;
     }
